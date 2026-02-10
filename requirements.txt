@@ -1,0 +1,6 @@
+requests
+pyyaml
+PyQt5
+python-dotenv
+pytest
+allure-pytest
