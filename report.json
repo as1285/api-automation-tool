@@ -1,58 +1,43 @@
 {
-  "generated_at": "2026-02-10T14:37:40.285327",
-  "total": 20,
-  "passed": 0,
-  "failed": 20,
+  "generated_at": "2026-02-10T16:26:14.859781",
+  "summary": {
+    "total": 20,
+    "passed": 0,
+    "failed": 20,
+    "success_rate": 0.0,
+    "avg_response_time": 1.5127687
+  },
+  "method_stats": {
+    "PUT": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2
+    },
+    "POST": {
+      "total": 7,
+      "passed": 0,
+      "failed": 7
+    },
+    "GET": {
+      "total": 8,
+      "passed": 0,
+      "failed": 8
+    },
+    "DELETE": {
+      "total": 3,
+      "passed": 0,
+      "failed": 3
+    }
+  },
   "results": [
     {
       "success": false,
-      "status_code": 404,
-      "response_time": 1.238866,
-      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
-      "response_json": {},
-      "error": "",
-      "test_case": {
-        "id": "test_POST__pet_petId_uploadImage",
-        "name": "uploads an image",
-        "method": "POST",
-        "path": "/pet/{petId}/uploadImage",
-        "headers": {},
-        "params": {},
-        "data": {},
-        "json": {},
-        "expected_status": 200,
-        "expected_response": {},
-        "description": ""
-      }
-    },
-    {
-      "success": false,
-      "status_code": 404,
-      "response_time": 1.227499,
-      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
-      "response_json": {},
-      "error": "",
-      "test_case": {
-        "id": "test_POST__pet",
-        "name": "Add a new pet to the store",
-        "method": "POST",
-        "path": "/pet",
-        "headers": {},
-        "params": {},
-        "data": {},
-        "json": {},
-        "expected_status": 200,
-        "expected_response": {},
-        "description": ""
-      }
-    },
-    {
-      "success": false,
       "status_code": 405,
-      "response_time": 1.25029,
+      "response_time": 1.356106,
       "response_text": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_PUT__pet",
         "name": "Update an existing pet",
@@ -70,33 +55,33 @@
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.230977,
+      "response_time": 1.362048,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
-        "id": "test_GET__pet_findByStatus",
-        "name": "Finds Pets by status",
-        "method": "GET",
-        "path": "/pet/findByStatus",
+        "id": "test_POST__pet",
+        "name": "Add a new pet to the store",
+        "method": "POST",
+        "path": "/pet",
         "headers": {},
-        "params": {
-          "status": ""
-        },
+        "params": {},
         "data": {},
         "json": {},
         "expected_status": 200,
         "expected_response": {},
-        "description": "Multiple status values can be provided with comma separated strings"
+        "description": ""
       }
     },
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.248773,
+      "response_time": 1.604952,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_GET__pet_findByTags",
         "name": "Finds Pets by tags",
@@ -116,10 +101,57 @@
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.225746,
+      "response_time": 1.631087,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
+      "test_case": {
+        "id": "test_GET__pet_findByStatus",
+        "name": "Finds Pets by status",
+        "method": "GET",
+        "path": "/pet/findByStatus",
+        "headers": {},
+        "params": {
+          "status": ""
+        },
+        "data": {},
+        "json": {},
+        "expected_status": 200,
+        "expected_response": {},
+        "description": "Multiple status values can be provided with comma separated strings"
+      }
+    },
+    {
+      "success": false,
+      "status_code": 404,
+      "response_time": 1.663889,
+      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response_json": {},
+      "error": "",
+      "retry_count": 0,
+      "test_case": {
+        "id": "test_POST__pet_petId_uploadImage",
+        "name": "uploads an image",
+        "method": "POST",
+        "path": "/pet/{petId}/uploadImage",
+        "headers": {},
+        "params": {},
+        "data": {},
+        "json": {},
+        "expected_status": 200,
+        "expected_response": {},
+        "description": ""
+      }
+    },
+    {
+      "success": false,
+      "status_code": 404,
+      "response_time": 1.241119,
+      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response_json": {},
+      "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_GET__pet_petId",
         "name": "Find pet by ID",
@@ -137,10 +169,11 @@
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.242177,
+      "response_time": 1.25062,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_POST__pet_petId",
         "name": "Updates a pet in the store with form data",
@@ -158,10 +191,11 @@
     {
       "success": false,
       "status_code": 405,
-      "response_time": 2.237354,
+      "response_time": 1.279791,
       "response_text": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_DELETE__pet_petId",
         "name": "Deletes a pet",
@@ -181,31 +215,11 @@
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.327033,
+      "response_time": 1.248624,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
-      "test_case": {
-        "id": "test_GET__store_inventory",
-        "name": "Returns pet inventories by status",
-        "method": "GET",
-        "path": "/store/inventory",
-        "headers": {},
-        "params": {},
-        "data": {},
-        "json": {},
-        "expected_status": 200,
-        "expected_response": {},
-        "description": "Returns a map of status codes to quantities"
-      }
-    },
-    {
-      "success": false,
-      "status_code": 404,
-      "response_time": 1.89722,
-      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
-      "response_json": {},
-      "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_POST__store_order",
         "name": "Place an order for a pet",
@@ -223,10 +237,33 @@
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.231986,
+      "response_time": 1.931872,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
+      "test_case": {
+        "id": "test_GET__store_inventory",
+        "name": "Returns pet inventories by status",
+        "method": "GET",
+        "path": "/store/inventory",
+        "headers": {},
+        "params": {},
+        "data": {},
+        "json": {},
+        "expected_status": 200,
+        "expected_response": {},
+        "description": "Returns a map of status codes to quantities"
+      }
+    },
+    {
+      "success": false,
+      "status_code": 404,
+      "response_time": 1.247926,
+      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response_json": {},
+      "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_GET__store_order_orderId",
         "name": "Find purchase order by ID",
@@ -244,10 +281,11 @@
     {
       "success": false,
       "status_code": 405,
-      "response_time": 1.212637,
+      "response_time": 1.240656,
       "response_text": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_DELETE__store_order_orderId",
         "name": "Delete purchase order by ID",
@@ -265,31 +303,11 @@
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.25227,
+      "response_time": 1.221044,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
-      "test_case": {
-        "id": "test_POST__user_createWithList",
-        "name": "Creates list of users with given input array",
-        "method": "POST",
-        "path": "/user/createWithList",
-        "headers": {},
-        "params": {},
-        "data": {},
-        "json": {},
-        "expected_status": 200,
-        "expected_response": {},
-        "description": ""
-      }
-    },
-    {
-      "success": false,
-      "status_code": 404,
-      "response_time": 1.238106,
-      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
-      "response_json": {},
-      "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_GET__user_username",
         "name": "Get user by user name",
@@ -307,10 +325,11 @@
     {
       "success": false,
       "status_code": 405,
-      "response_time": 1.217354,
+      "response_time": 1.222046,
       "response_text": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_PUT__user_username",
         "name": "Updated user",
@@ -327,32 +346,78 @@
     },
     {
       "success": false,
-      "status_code": 405,
-      "response_time": 1.235989,
-      "response_text": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "status_code": 404,
+      "response_time": 1.930734,
+      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
-        "id": "test_DELETE__user_username",
-        "name": "Delete user",
-        "method": "DELETE",
-        "path": "/user/{username}",
+        "id": "test_POST__user_createWithList",
+        "name": "Creates list of users with given input array",
+        "method": "POST",
+        "path": "/user/createWithList",
         "headers": {},
         "params": {},
         "data": {},
         "json": {},
         "expected_status": 200,
         "expected_response": {},
-        "description": "This can only be done by the logged in user."
+        "description": ""
       }
     },
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.234133,
+      "response_time": 1.22325,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
+      "test_case": {
+        "id": "test_GET__user_logout",
+        "name": "Logs out current logged in user session",
+        "method": "GET",
+        "path": "/user/logout",
+        "headers": {},
+        "params": {},
+        "data": {},
+        "json": {},
+        "expected_status": 200,
+        "expected_response": {},
+        "description": ""
+      }
+    },
+    {
+      "success": false,
+      "status_code": 404,
+      "response_time": 1.246176,
+      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response_json": {},
+      "error": "",
+      "retry_count": 0,
+      "test_case": {
+        "id": "test_POST__user_createWithArray",
+        "name": "Creates list of users with given input array",
+        "method": "POST",
+        "path": "/user/createWithArray",
+        "headers": {},
+        "params": {},
+        "data": {},
+        "json": {},
+        "expected_status": 200,
+        "expected_response": {},
+        "description": ""
+      }
+    },
+    {
+      "success": false,
+      "status_code": 404,
+      "response_time": 2.203843,
+      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response_json": {},
+      "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_GET__user_login",
         "name": "Logs user into the system",
@@ -372,53 +437,34 @@
     },
     {
       "success": false,
-      "status_code": 404,
-      "response_time": 1.543397,
-      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "status_code": 405,
+      "response_time": 2.563539,
+      "response_text": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
+      "retry_count": 0,
       "test_case": {
-        "id": "test_GET__user_logout",
-        "name": "Logs out current logged in user session",
-        "method": "GET",
-        "path": "/user/logout",
+        "id": "test_DELETE__user_username",
+        "name": "Delete user",
+        "method": "DELETE",
+        "path": "/user/{username}",
         "headers": {},
         "params": {},
         "data": {},
         "json": {},
         "expected_status": 200,
         "expected_response": {},
-        "description": ""
+        "description": "This can only be done by the logged in user."
       }
     },
     {
       "success": false,
       "status_code": 404,
-      "response_time": 1.766647,
+      "response_time": 1.586052,
       "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "response_json": {},
       "error": "",
-      "test_case": {
-        "id": "test_POST__user_createWithArray",
-        "name": "Creates list of users with given input array",
-        "method": "POST",
-        "path": "/user/createWithArray",
-        "headers": {},
-        "params": {},
-        "data": {},
-        "json": {},
-        "expected_status": 200,
-        "expected_response": {},
-        "description": ""
-      }
-    },
-    {
-      "success": false,
-      "status_code": 404,
-      "response_time": 1.225701,
-      "response_text": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
-      "response_json": {},
-      "error": "",
+      "retry_count": 0,
       "test_case": {
         "id": "test_POST__user",
         "name": "Create user",

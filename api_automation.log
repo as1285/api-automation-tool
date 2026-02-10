@@ -1,0 +1,50 @@
+2026-02-10 16:24:56,704 - app.utils.logger - INFO - 添加插件路径: F:\naicha\plugins
+2026-02-10 16:24:56,705 - app.utils.logger - INFO - 成功加载插件: ExamplePlugin v1.0.0
+2026-02-10 16:24:56,705 - app.utils.logger - INFO - 共加载 1 个插件: ExamplePlugin
+2026-02-10 16:24:56,713 - app.utils.logger - INFO - API服务器已启动，监听地址: 0.0.0.0:5000
+2026-02-10 16:25:33,025 - app.utils.logger - INFO - 检测到文档格式: swagger
+2026-02-10 16:25:45,357 - app.utils.logger - INFO - 测试用例保存成功: F:/naicha/test_cases.json
+2026-02-10 16:26:02,064 - app.utils.logger - INFO - 开始执行测试用例，共 20 个，并发数: 5
+2026-02-10 16:26:02,065 - app.utils.logger - INFO - 开始执行测试用例: test_POST__pet_petId_uploadImage - uploads an image
+2026-02-10 16:26:02,065 - app.utils.logger - INFO - 开始执行测试用例: test_POST__pet - Add a new pet to the store
+2026-02-10 16:26:02,065 - app.utils.logger - INFO - 开始执行测试用例: test_PUT__pet - Update an existing pet
+2026-02-10 16:26:02,065 - app.utils.logger - INFO - 开始执行测试用例: test_GET__pet_findByStatus - Finds Pets by status
+2026-02-10 16:26:02,066 - app.utils.logger - INFO - 开始执行测试用例: test_GET__pet_findByTags - Finds Pets by tags
+2026-02-10 16:26:03,423 - app.utils.logger - INFO - 测试用例执行完成: test_PUT__pet - 状态码: 405 - 耗时: 1.356s - 结果: 失败
+2026-02-10 16:26:03,424 - app.utils.logger - INFO - 开始执行测试用例: test_GET__pet_petId - Find pet by ID
+2026-02-10 16:26:03,429 - app.utils.logger - INFO - 测试用例执行完成: test_POST__pet - 状态码: 404 - 耗时: 1.362s - 结果: 失败
+2026-02-10 16:26:03,431 - app.utils.logger - INFO - 开始执行测试用例: test_POST__pet_petId - Updates a pet in the store with form data
+2026-02-10 16:26:03,673 - app.utils.logger - INFO - 测试用例执行完成: test_GET__pet_findByTags - 状态码: 404 - 耗时: 1.605s - 结果: 失败
+2026-02-10 16:26:03,674 - app.utils.logger - INFO - 开始执行测试用例: test_DELETE__pet_petId - Deletes a pet
+2026-02-10 16:26:03,698 - app.utils.logger - INFO - 测试用例执行完成: test_GET__pet_findByStatus - 状态码: 404 - 耗时: 1.631s - 结果: 失败
+2026-02-10 16:26:03,706 - app.utils.logger - INFO - 开始执行测试用例: test_GET__store_inventory - Returns pet inventories by status
+2026-02-10 16:26:03,730 - app.utils.logger - INFO - 测试用例执行完成: test_POST__pet_petId_uploadImage - 状态码: 404 - 耗时: 1.664s - 结果: 失败
+2026-02-10 16:26:03,731 - app.utils.logger - INFO - 开始执行测试用例: test_POST__store_order - Place an order for a pet
+2026-02-10 16:26:04,667 - app.utils.logger - INFO - 测试用例执行完成: test_GET__pet_petId - 状态码: 404 - 耗时: 1.241s - 结果: 失败
+2026-02-10 16:26:04,668 - app.utils.logger - INFO - 开始执行测试用例: test_GET__store_order_orderId - Find purchase order by ID
+2026-02-10 16:26:04,685 - app.utils.logger - INFO - 测试用例执行完成: test_POST__pet_petId - 状态码: 404 - 耗时: 1.251s - 结果: 失败
+2026-02-10 16:26:04,686 - app.utils.logger - INFO - 开始执行测试用例: test_DELETE__store_order_orderId - Delete purchase order by ID
+2026-02-10 16:26:04,954 - app.utils.logger - INFO - 测试用例执行完成: test_DELETE__pet_petId - 状态码: 405 - 耗时: 1.280s - 结果: 失败
+2026-02-10 16:26:04,955 - app.utils.logger - INFO - 开始执行测试用例: test_POST__user_createWithList - Creates list of users with given input array
+2026-02-10 16:26:04,980 - app.utils.logger - INFO - 测试用例执行完成: test_POST__store_order - 状态码: 404 - 耗时: 1.249s - 结果: 失败
+2026-02-10 16:26:04,981 - app.utils.logger - INFO - 开始执行测试用例: test_GET__user_username - Get user by user name
+2026-02-10 16:26:05,638 - app.utils.logger - INFO - 测试用例执行完成: test_GET__store_inventory - 状态码: 404 - 耗时: 1.932s - 结果: 失败
+2026-02-10 16:26:05,640 - app.utils.logger - INFO - 开始执行测试用例: test_PUT__user_username - Updated user
+2026-02-10 16:26:05,640 - app.utils.logger - INFO - 测试执行进度: 10/20
+2026-02-10 16:26:05,916 - app.utils.logger - INFO - 测试用例执行完成: test_GET__store_order_orderId - 状态码: 404 - 耗时: 1.248s - 结果: 失败
+2026-02-10 16:26:05,917 - app.utils.logger - INFO - 开始执行测试用例: test_DELETE__user_username - Delete user
+2026-02-10 16:26:05,927 - app.utils.logger - INFO - 测试用例执行完成: test_DELETE__store_order_orderId - 状态码: 405 - 耗时: 1.241s - 结果: 失败
+2026-02-10 16:26:05,928 - app.utils.logger - INFO - 开始执行测试用例: test_GET__user_login - Logs user into the system
+2026-02-10 16:26:06,203 - app.utils.logger - INFO - 测试用例执行完成: test_GET__user_username - 状态码: 404 - 耗时: 1.221s - 结果: 失败
+2026-02-10 16:26:06,204 - app.utils.logger - INFO - 开始执行测试用例: test_GET__user_logout - Logs out current logged in user session
+2026-02-10 16:26:06,863 - app.utils.logger - INFO - 测试用例执行完成: test_PUT__user_username - 状态码: 405 - 耗时: 1.222s - 结果: 失败
+2026-02-10 16:26:06,866 - app.utils.logger - INFO - 开始执行测试用例: test_POST__user_createWithArray - Creates list of users with given input array
+2026-02-10 16:26:06,886 - app.utils.logger - INFO - 测试用例执行完成: test_POST__user_createWithList - 状态码: 404 - 耗时: 1.931s - 结果: 失败
+2026-02-10 16:26:06,893 - app.utils.logger - INFO - 开始执行测试用例: test_POST__user - Create user
+2026-02-10 16:26:07,428 - app.utils.logger - INFO - 测试用例执行完成: test_GET__user_logout - 状态码: 404 - 耗时: 1.223s - 结果: 失败
+2026-02-10 16:26:08,117 - app.utils.logger - INFO - 测试用例执行完成: test_POST__user_createWithArray - 状态码: 404 - 耗时: 1.246s - 结果: 失败
+2026-02-10 16:26:08,133 - app.utils.logger - INFO - 测试用例执行完成: test_GET__user_login - 状态码: 404 - 耗时: 2.204s - 结果: 失败
+2026-02-10 16:26:08,481 - app.utils.logger - INFO - 测试用例执行完成: test_DELETE__user_username - 状态码: 405 - 耗时: 2.564s - 结果: 失败
+2026-02-10 16:26:08,489 - app.utils.logger - INFO - 测试用例执行完成: test_POST__user - 状态码: 404 - 耗时: 1.586s - 结果: 失败
+2026-02-10 16:26:08,490 - app.utils.logger - INFO - 测试执行进度: 20/20
+2026-02-10 16:26:08,490 - app.utils.logger - INFO - 测试用例执行完成，共 20 个，成功 0 个

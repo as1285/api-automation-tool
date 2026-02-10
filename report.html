@@ -1,0 +1,1257 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>接口测试报告</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+        .report-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .summary-card { border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .stat-card { transition: transform 0.3s ease; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .success-bg { background-color: #d4edda; }
+        .danger-bg { background-color: #f8d7da; }
+        .info-bg { background-color: #d1ecf1; }
+        .warning-bg { background-color: #fff3cd; }
+        .test-case { margin-bottom: 15px; border: 1px solid #e9ecef; border-radius: 4px; }
+        .test-case-header { padding: 10px 15px; background-color: #f8f9fa; border-bottom: 1px solid #e9ecef; }
+        .test-case-body { padding: 15px; }
+        .test-case-success { border-left: 4px solid #28a745; }
+        .test-case-failed { border-left: 4px solid #dc3545; }
+        .response-content { background-color: #f8f9fa; padding: 10px; border-radius: 4px; font-family: 'Courier New', monospace; white-space: pre-wrap; word-wrap: break-word; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline-item { margin-bottom: 10px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -15px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background-color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <!-- 报告标题 -->
+        <div class="text-center mb-5">
+            <h1 class="text-primary">接口自动化测试报告</h1>
+            <p class="text-muted">生成时间: 2026-02-10 16:26:20</p>
+        </div>
+        
+        <!-- 摘要卡片 -->
+        <div class="summary-card bg-white p-4 mb-5">
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="stat-card success-bg p-3 rounded-lg text-center">
+                        <h3 class="text-success">0</h3>
+                        <p class="mb-0">通过</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card danger-bg p-3 rounded-lg text-center">
+                        <h3 class="text-danger">20</h3>
+                        <p class="mb-0">失败</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card info-bg p-3 rounded-lg text-center">
+                        <h3 class="text-info">20</h3>
+                        <p class="mb-0">总用例</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card warning-bg p-3 rounded-lg text-center">
+                        <h3 class="text-warning">0.00%</h3>
+                        <p class="mb-0">成功率</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="bg-light p-3 rounded-lg">
+                        <h5 class="text-dark mb-2">平均响应时间</h5>
+                        <p class="text-xl">1.513 秒</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-light p-3 rounded-lg">
+                        <h5 class="text-dark mb-2">测试环境</h5>
+                        <p>接口自动化测试平台 v1.0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 图表 -->
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h4 class="mb-3">测试结果统计</h4>
+                    <div style="height: 300px;">
+                        <canvas id="testResultsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 测试详情 -->
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+            <h2 class="text-secondary mb-4">测试详情</h2>
+            
+            
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Update an existing pet</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">PUT</span>
+                        <span class="ml-2">/pet</span>
+                        <span class="ml-2">用例ID: test_PUT__pet</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.356s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">405</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.356 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;405 Not Allowed&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;405 Not Allowed&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Add a new pet to the store</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/pet</span>
+                        <span class="ml-2">用例ID: test_POST__pet</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.362s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.362 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Finds Pets by tags</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/pet/findByTags</span>
+                        <span class="ml-2">用例ID: test_GET__pet_findByTags</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.605s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{
+  "tags": ""
+}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.605 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Finds Pets by status</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/pet/findByStatus</span>
+                        <span class="ml-2">用例ID: test_GET__pet_findByStatus</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.631s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{
+  "status": ""
+}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.631 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">uploads an image</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/pet/{petId}/uploadImage</span>
+                        <span class="ml-2">用例ID: test_POST__pet_petId_uploadImage</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.664s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.664 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Find pet by ID</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/pet/{petId}</span>
+                        <span class="ml-2">用例ID: test_GET__pet_petId</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.241s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.241 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Updates a pet in the store with form data</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/pet/{petId}</span>
+                        <span class="ml-2">用例ID: test_POST__pet_petId</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.251s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.251 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Deletes a pet</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">DELETE</span>
+                        <span class="ml-2">/pet/{petId}</span>
+                        <span class="ml-2">用例ID: test_DELETE__pet_petId</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.280s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{
+  "api_key": ""
+}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">405</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.280 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;405 Not Allowed&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;405 Not Allowed&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Place an order for a pet</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/store/order</span>
+                        <span class="ml-2">用例ID: test_POST__store_order</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.249s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.249 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Returns pet inventories by status</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/store/inventory</span>
+                        <span class="ml-2">用例ID: test_GET__store_inventory</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.932s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.932 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Find purchase order by ID</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/store/order/{orderId}</span>
+                        <span class="ml-2">用例ID: test_GET__store_order_orderId</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.248s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.248 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Delete purchase order by ID</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">DELETE</span>
+                        <span class="ml-2">/store/order/{orderId}</span>
+                        <span class="ml-2">用例ID: test_DELETE__store_order_orderId</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.241s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">405</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.241 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;405 Not Allowed&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;405 Not Allowed&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Get user by user name</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/user/{username}</span>
+                        <span class="ml-2">用例ID: test_GET__user_username</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.221s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.221 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Updated user</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">PUT</span>
+                        <span class="ml-2">/user/{username}</span>
+                        <span class="ml-2">用例ID: test_PUT__user_username</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.222s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">405</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.222 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;405 Not Allowed&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;405 Not Allowed&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Creates list of users with given input array</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/user/createWithList</span>
+                        <span class="ml-2">用例ID: test_POST__user_createWithList</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.931s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.931 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Logs out current logged in user session</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/user/logout</span>
+                        <span class="ml-2">用例ID: test_GET__user_logout</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.223s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.223 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Creates list of users with given input array</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/user/createWithArray</span>
+                        <span class="ml-2">用例ID: test_POST__user_createWithArray</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.246s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.246 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Logs user into the system</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">GET</span>
+                        <span class="ml-2">/user/login</span>
+                        <span class="ml-2">用例ID: test_GET__user_login</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">2.204s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{
+  "username": "",
+  "password": ""
+}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 2.204 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Delete user</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">DELETE</span>
+                        <span class="ml-2">/user/{username}</span>
+                        <span class="ml-2">用例ID: test_DELETE__user_username</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">2.564s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">405</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 2.564 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;405 Not Allowed&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;405 Not Allowed&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-case test-case-failed">
+            <div class="test-case-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-0 font-weight-bold">Create user</h5>
+                    <p class="text-sm text-muted mb-0">
+                        <span class="badge badge-primary">POST</span>
+                        <span class="ml-2">/user</span>
+                        <span class="ml-2">用例ID: test_POST__user</span>
+                    </p>
+                </div>
+                <div>
+                    <span class="badge badge-danger">失败</span>
+                    <span class="ml-2 text-sm">1.586s</span>
+                </div>
+            </div>
+            <div class="test-case-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">请求信息</h6>
+                        <div class="mb-2">
+                            <strong>请求头:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        <div class="mb-2">
+                            <strong>查询参数:</strong>
+                            <div class="response-content">{}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-dark mb-2">响应信息</h6>
+                        <div class="mb-2">
+                            <strong>状态码:</strong> <span class="badge badge-info">404</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>响应时间:</strong> 1.586 秒
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>响应内容:</strong>
+                            <div class="response-content">&lt;html&gt;
+&lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <script>
+        // 初始化图表
+        const ctx = document.getElementById('testResultsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["PUT", "POST", "GET", "DELETE"],
+                datasets: [
+                    {
+                        label: '通过',
+                        data: [0, 0, 0, 0],
+                        backgroundColor: 'rgba(40, 167, 69, 0.6)',
+                        borderColor: 'rgba(40, 167, 69, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '失败',
+                        data: [2, 7, 8, 3],
+                        backgroundColor: 'rgba(220, 53, 69, 0.6)',
+                        borderColor: 'rgba(220, 53, 69, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '用例数量'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'HTTP方法'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+        
